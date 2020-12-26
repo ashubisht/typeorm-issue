@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  poc-db:
+    image: postgres:12.1
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./packages/api/init-db.sh:/docker-entrypoint-initdb.d/01-init-api-db.sh
+    env_file:
+      - ./packages/api/.env
+  poc-api:
+    depends_on:
+      - poc-db
+    build:
+      context: .
+      dockerfile: api.dockerfile
+    ports:
+      - "3000:80"
+    env_file:
+      - ./packages/api/.env
+    environment:
+      - NODE_ENV=

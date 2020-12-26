@@ -1,0 +1,52 @@
+Tables
+
+Question tables
+Exam configuration
+GCP file storage/ AWS file storage configuration
+
+
+Category entity:
+Id
+Code
+Name
+optionCount
+
+User entity
+Id
+First name
+Last name
+Email id
+Date of joining
+
+// ———————————————————————————————
+// id of exam configuration is id of exam too
+Exam
+Configuration: ExamConfiguration
+Sets: ExamSet[]
+// ———————————————————————————————
+
+Exam Configuration:
+Id
+Name
+Time
+Subject
+Noq
+Nosets
+Nosecs
+Mfca
+Mfia
+
+Section
+Id
+Name
+Mfca
+Mfia
+Noq
+startFrom
+endTo
+
+ExamSets
+Id
+examId
+Sections —> Type: Section[] // sectionIds
+questionList: string[] // string of questionIds (How to link to foreign keys as they reside inside array????)

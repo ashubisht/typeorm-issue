@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/webpack",
+      "**/jest",
+      "**/babel-loader"
+    ]
+  },
+  "scripts": {},
+  "devDependencies": {},
+  "version": "1.0.0"
+}
