@@ -6,7 +6,7 @@ console.log(baseDir);
 const entitiesPath = `${baseDir}${process.env.TYPEORM_ENTITIES}`;
 const migrationPath = `${baseDir}${process.env.TYPEORM_MIGRATIONS}`;
 
-const typeOrmConfig: TypeOrmModuleOptions = {
+export const typeOrmConfig: TypeOrmModuleOptions = {
   type: "postgres",
   host: process.env.POSTGRES_HOST,
   port: parseInt(process.env.POSTGRES_PORT || "5432", 10),
@@ -29,4 +29,4 @@ const typeOrmConfig: TypeOrmModuleOptions = {
     : true,
 };
 
-export = typeOrmConfig
+// export = typeOrmConfig
